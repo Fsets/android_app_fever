@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="colorPrimary">#1B1939 </color>
+    <color name="colorSecondary">#F8B621</color>
+    <color name="colorSecondaryLight">#F7D78E</color>
+    <color name="colorPrimaryDisabled">#AEAEAE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="colorWhite">#FFFFFF</color>
+
+    <color name="colorNegro">#000000</color>
+    <color name="colorGris">#B5B5C3</color>
+    <color name="colorAzul">#2FA4E0</color>
+    <color name="colorAzulClaro">#DEE8F7</color>
+    <color name="colorGrisClaro">#F1F5F8</color>
+    <color name="colorGrisOscuro">#505353</color>
+    <color name="colorGrisClaro2">#F2F2F2</color>
+    <color name="colorNaranja">#E06B2F</color>
+    <color name="colorNaranjaClaro">#FFD6C2</color>
+    <color name="colorNaranjaAmarillo">#FCA841</color>
+    <color name="colorVerde">#00BC9F</color>
+    <color name="colorVerdeClaro">#D7F9EF</color>
+    <color name="colorRojo">#F64E60</color>
+    <color name="colorRojoClaro">#FFE2E5</color>
+    <color name="colorAmarillo">#FFB000</color>
+    <color name="colorAmarilloClaro">#FFF4DE</color>
+</resources>
