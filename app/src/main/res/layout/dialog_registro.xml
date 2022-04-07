@@ -276,7 +276,7 @@
                     android:orientation="vertical">
 
                     <CheckBox
-                        android:id="@+id/checkBox"
+                        android:id="@+id/cboxPolicy"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"

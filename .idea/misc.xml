@@ -4,8 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.361" />
+        <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/drawable/bottom_menu.xml" value="0.346" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/drawable/dialogdesign.xml" value="0.336" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/drawable/edtxt_custom.xml" value="0.25" />
+        <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/drawable/evento_background.xml" value="0.346" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/drawable/filtros_design.xml" value="0.361" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.2985" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.2985" />
@@ -43,6 +45,8 @@
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/fragment_home.xml" value="0.5" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/fragment_notifications.xml" value="0.2971014492753623" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/fragment_profile.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/item_evento.xml" value="0.55" />
+        <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/item_evento2.xml" value="0.55" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/login.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/menu_principal.xml" value="0.2971014492753623" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/pagina_principal.xml" value="0.36666666666666664" />

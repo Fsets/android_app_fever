@@ -4,8 +4,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.SeekBar;
-import android.widget.TextView;
+import android.widget.Toast;
 
 import com.dialogs.dialogFragmentLogin;
 import com.example.nft_ticket_andrey.R;
@@ -32,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications, R.id.navigation_profile)
+                R.id.navigation_eventos, R.id.navigation_musica, R.id.navigation_search, R.id.navigation_profile)
                 .build();
         navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         //NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
@@ -43,10 +42,24 @@ public class MainActivity extends AppCompatActivity {
         navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                if(item.getItemId() == R.id.navigation_profile){
+                if (item.getItemId() == R.id.navigation_profile) {
                     showModalLoginDialog(); //lanza el dialogo de login
                 }
-
+                if (item.getItemId() == R.id.navigation_eventos) {
+                    //muestra el eventos
+                    navController.navigate(R.id.navigation_eventos);
+                    Toast.makeText(getApplicationContext(),"Eventos", Toast.LENGTH_SHORT).show();
+                }
+                if (item.getItemId() == R.id.navigation_musica) {
+                    //muestra el musica
+                    navController.navigate(R.id.navigation_musica);
+                    Toast.makeText(getApplicationContext(),"Musica", Toast.LENGTH_SHORT).show();
+                }
+                if (item.getItemId() == R.id.navigation_search) {
+                    //muestra el search
+                    navController.navigate(R.id.navigation_search);
+                    Toast.makeText(getApplicationContext(),"search", Toast.LENGTH_SHORT).show();
+                }
                 return false;
             }
 });

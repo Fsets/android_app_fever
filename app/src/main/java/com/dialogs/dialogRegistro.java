@@ -2,19 +2,31 @@ package com.dialogs;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import com.activities.MainActivity;
 import com.example.nft_ticket_andrey.R;
+import com.example.nft_ticket_andrey.ui.home.HomeFragment;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by Cristian Mármol cristian.marmol@occamcomunicacion.com on 31/03/2022.
@@ -24,7 +36,12 @@ public class dialogRegistro extends Dialog implements View.OnClickListener{
     private Bundle args;
     private Button btnIniciarSesRegistro,btnCancelarRegistro;
     private ImageButton btnClose;
-    private TextView btnIniciaReg;
+    private TextView btnIniciaReg, btnPrivacyPolicy;
+    private CheckBox cboxPolicy;
+    private String url, email = "", password = "", confirmPassword = "";
+    EditText edEmail, edPassword, edConfirmPassword;
+
+    boolean error = false, error2 = false, error3 = false;
 
     dialogRegistro.OnMyDialogResult mDialogResultR;
 
@@ -43,10 +60,30 @@ public class dialogRegistro extends Dialog implements View.OnClickListener{
     }
 
     public void loadElements(){
+        edEmail = findViewById(R.id.ed_email_reg);
+        edConfirmPassword = findViewById((R.id.ed_rep_password_reg));
+        edPassword = findViewById(R.id.ed_pasword_reg);
+
         btnIniciarSesRegistro = findViewById(R.id.bt_iniciar_sesion_reg);
         btnCancelarRegistro = findViewById(R.id.bt_cancelar_reg);
         btnIniciaReg = findViewById(R.id.txt_inicia_reg);
         btnClose = findViewById(R.id.btnCloseRegistro);
+        cboxPolicy = (CheckBox)findViewById(R.id.cboxPolicy);
+        cboxPolicy.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(compoundButton.isChecked()){
+                    btnIniciarSesRegistro.setEnabled(true);
+                }else{
+                    btnIniciarSesRegistro.setEnabled(false);
+                }
+
+            }
+        });
+
+        btnPrivacyPolicy = (TextView) findViewById(R.id.btn_terminos_reg);
+        url= "https://bitstartups.es/politica-de-privacidad/";
+        btnPrivacyPolicy.setOnClickListener(this);
 
         btnIniciarSesRegistro.setOnClickListener(this);
         btnCancelarRegistro.setOnClickListener(this);
@@ -62,12 +99,45 @@ public class dialogRegistro extends Dialog implements View.OnClickListener{
         void fin(boolean fin);
     }
 
+    public static boolean isValidPassword(final String password) {
+        Pattern pattern;
+        Matcher matcher;
+        final String PASSWORD_PATTERN = "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!¡%*¿?&#+-{}^-_%&()ºª.,;<>]).{6,})";
+        pattern = Pattern.compile(PASSWORD_PATTERN);
+        matcher = pattern.matcher(password);
+
+        return matcher.matches();
+    }
+
+    private void obtainValues(){
+        error = false;
+        error2 = false;
+        error3 = false;
+        email = edEmail.getText().toString();
+        password = edPassword.getText().toString();
+        confirmPassword = edConfirmPassword.getText().toString();
+
+        if (email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()){
+            error = true;
+
+        }else if (!password.equalsIgnoreCase(confirmPassword)){
+            error2 = true;
+
+        }else if(!isValidPassword(password)){
+            error3 = true;
+        }
+    }
+
     @Override
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.bt_iniciar_sesion_reg:
                 //lanzar el intent de inicio
-                Toast.makeText(getContext(),"iniciando sesion..", Toast.LENGTH_SHORT).show();
+                if(cboxPolicy.isChecked()) {
+                    Toast.makeText(getContext(), "iniciando sesion..", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(getContext(), "Tiene que aceptar las politicas de privacidad..", Toast.LENGTH_SHORT).show();
+                }
                 break;
             case R.id.bt_cancelar_reg:
                 Toast.makeText(getContext(),"cerrando sesion..", Toast.LENGTH_SHORT).show();
@@ -80,6 +150,11 @@ public class dialogRegistro extends Dialog implements View.OnClickListener{
                 break;
             case R.id.btnCloseRegistro:
                 dismiss();
+                break;
+            case R.id.btn_terminos_reg:
+                Uri uri = Uri.parse(url);
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                getContext().startActivity(intent);
                 break;
         }
     }
