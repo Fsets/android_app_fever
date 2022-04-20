@@ -64,6 +64,7 @@ public class EventosActivity extends AppCompatActivity implements View.OnClickLi
     Spinner spinnerEntradas;
     ArrayAdapter<String> aaEntradas; //para añadir elementos al spinner
     String [] aEntradas = new String[] {"Selecciona una categoria", "Entrada 1", "Entrada 2", "Entrada 3", "Entrada 4"};
+    private Object Eventos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +75,7 @@ public class EventosActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     public void getElements(){
-        Intent i = getIntent(); //recoge el evento pasado
+        Intent i = getIntent(); //recoge el evento pasado de eventAdapter
         Eventos ev = (Eventos) i.getSerializableExtra("evento"); //lo recoge y almacena en la variable
 
         layoutFondoEvento = findViewById(R.id.layoutFondoEvento);
@@ -107,8 +108,9 @@ public class EventosActivity extends AppCompatActivity implements View.OnClickLi
 
         btComprarEvento = findViewById(R.id.bt_comprarEvento);
         btComprarEvento.setOnClickListener(this);
-        btComprarEvento.setText("Comprar Ahora - " + ev.getPrecio() + "€");
         precioI = ev.getPrecio();
+        precio = precioI;
+        btComprarEvento.setText("Comprar Ahora - " + precio + "€");
 
         spinnerEntradas = findViewById(R.id.spinnerTipoEntradas);
         spinnerEntradas.setOnItemSelectedListener(this);
@@ -151,7 +153,7 @@ public class EventosActivity extends AppCompatActivity implements View.OnClickLi
                     contador--;
                     precio = contador * precioI;
                     DecimalFormat df2 = new DecimalFormat("#.##");
-                    btComprarEvento.setText("Comprar Ahora - " + df2.format(precio) + "€");
+                        btComprarEvento.setText("Comprar Ahora - " + df2.format(precio) + "€");
                     txtnrEntradas.setText(contador + " Entradas");
                 }else if(contador == 0){
                     txtnrEntradas.setText("0 Entradas");
@@ -165,7 +167,7 @@ public class EventosActivity extends AppCompatActivity implements View.OnClickLi
 
     public void showModalDialog(){
         Bundle args = new Bundle(); //PASAR DATOS DE UN ACTIVITY A OTRO
-
+        args.putDouble("totalEntradas", precio);
         final dialogMetodoPago dialog = new dialogMetodoPago(args, EventosActivity.this, R.layout.dialog_metodo_pago);
         dialog.show();
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));

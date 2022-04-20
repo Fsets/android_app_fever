@@ -58,7 +58,7 @@ public class EventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                 //Toast.makeText(mContext.getApplicationContext(),"Detalles evento.." + eventHolder.txtTitulo.getText(),Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(view.getContext(), EventosActivity.class); //nos lleva al evento
                 intent.putExtra("evento", events); //pasar objeto seleccionado
-                view.getContext().startActivity(intent);
+                view.getContext().startActivity(intent); //envia info a eventosActivity
             }
         });
     }

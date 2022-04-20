@@ -14,11 +14,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:padding="35dp"
+                android:padding="15dp"
                 android:orientation="vertical">
 
                     <ImageButton
-                        android:id="@+id/imageButton2"
+                        android:id="@+id/btClosePago"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_gravity="right"
@@ -132,17 +132,16 @@
                 </LinearLayout>
 
                     <Button
-                        android:id="@+id/button3"
+                        android:id="@+id/btComprarEntrada"
                         android:layout_width="250dp"
                         android:layout_height="40dp"
                         android:layout_marginTop="20dp"
                         android:background="@drawable/style_botones"
                         android:textColor="@color/white"
-                        app:backgroundTint="@null"
-                        android:text="Comprar - 30.00€"/>
+                        app:backgroundTint="@null"/>
 
                     <Button
-                        android:id="@+id/button4"
+                        android:id="@+id/btCancelar_Pago"
                         android:layout_width="250dp"
                         android:layout_height="40dp"
                         android:layout_marginTop="10dp"
