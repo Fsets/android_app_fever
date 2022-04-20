@@ -1,23 +1,22 @@
 package com.example.nft_ticket_andrey.ui.home;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.activities.QRActivity;
 import com.adapters.EventAdapter;
 import com.bottomsheet.FiltrosBottomSheet;
 import com.example.nft_ticket_andrey.R;
@@ -31,9 +30,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
     private Button btn_todas, btn_cat1, btn_cat2;
     private Context mContext;
     private View root;
-    private RecyclerView recyclerEvents;
-    private ArrayList<Eventos> listEventos;
-    private RecyclerView.LayoutManager layoutManager;
+    private RecyclerView recyclerEvents, recylcerEventsCercanos;
+    private ArrayList<Eventos> listEventos, listEventosCercanos;
+    private RecyclerView.LayoutManager layoutManager, layoutManager2;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -63,19 +62,30 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         recyclerEvents= root.findViewById(R.id.recyclerEventos);
         layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL,false);
 
+        recylcerEventsCercanos= root.findViewById(R.id.recyclerEventosCercanos);
+        layoutManager2 = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL,false);
+
         getEvents();
     }
 
     public void getEvents(){
         listEventos = new ArrayList<>();
-        listEventos.add(new Eventos("Titulo del Evento1", R.drawable.event, 29.99));
-        listEventos.add(new Eventos("Titulo del Evento2", R.drawable.profile_menu, 39.99));
-        listEventos.add(new Eventos("Titulo del Evento3", R.drawable.music, 29.99));
-        listEventos.add(new Eventos("Titulo del Evento4", R.drawable.event_active, 39.99));
-        listEventos.add(new Eventos("Titulo del Evento5", R.drawable.profile_menu_active, 29.99));
+        listEventos.add(new Eventos("Titulo del Evento1", R.drawable.imgconcierto, 29.99, "domingo, abr 20, 2022", "13:00pm - 20:00pm", "descripcion 1"));
+        listEventos.add(new Eventos("Titulo del Evento2", R.drawable.imgconcierto2, 39.99, "sabado, abr 19, 2022", "18:00pm - 00:00pm", getString(R.string.descripcion)));
+        listEventos.add(new Eventos("Titulo del Evento3", R.drawable.imgmusica, 29.99, "lunes, may 13, 2022", "17:00pm - 22:00pm", "descripcion 3"));
+        listEventos.add(new Eventos("Titulo del Evento4", R.drawable.imgorquestra, 39.99, "martes, may 25, 2022", "11:00am - 15:00pm", "descripcion 4"));
+        listEventos.add(new Eventos("Titulo del Evento5", R.drawable.imgteatro, 29.99, "miercoles, jun 20, 2022", "10:00am - 17:00pm", "descripcion 5"));
         EventAdapter eventA= new EventAdapter(listEventos, getContext());
         recyclerEvents.setLayoutManager(layoutManager);
         recyclerEvents.setAdapter(eventA);
+
+        listEventosCercanos = new ArrayList<>();
+        listEventosCercanos.add(new Eventos("Evento Cercano 1", R.drawable.imgconcierto2, 29.99, "domingo, jun 10, 2022", "19:00pm - 00:30pm", "descripcion 6"));
+        listEventosCercanos.add(new Eventos("Evento Cercano 2", R.drawable.imgmusica, 49.99, "jueves, jul 24, 2022", "17:30pm - 23:30pm", "descripcion 7"));
+        listEventosCercanos.add(new Eventos("Evento Cercano 3", R.drawable.imgteatro, 29.99, "viernes, abr 27, 2022", "14:00pm - 20:30pm", "descripcion 8"));
+        EventAdapter eventA2= new EventAdapter(listEventosCercanos, getContext());
+        recylcerEventsCercanos.setLayoutManager(layoutManager2);
+        recylcerEventsCercanos.setAdapter(eventA2);
     }
     @Override
     public void onClick(View v) {
@@ -89,6 +99,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
                 break;
             case R.id.btn_todas:
                 Toast.makeText(getContext(),"todas categorias..", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(v.getContext(), QRActivity.class);
+                v.getContext().startActivity(i);
                 break;
             case R.id.btn_cat1:
                 Toast.makeText(getContext(),"categoria1", Toast.LENGTH_SHORT).show();

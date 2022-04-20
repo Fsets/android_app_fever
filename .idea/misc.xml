@@ -24,21 +24,26 @@
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/drawable/spinner_item_selector.xml" value="0.346" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/drawable/style_boton_restablecer.xml" value="0.346" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/drawable/style_botones.xml" value="0.2985" />
+        <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/drawable/style_botones_compra.xml" value="0.346" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/drawable/style_botones_white.xml" value="0.346" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/drawable/style_categorias.xml" value="0.336" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/drawable/style_categorias_noselected.xml" value="0.361" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/drawable/style_categorias_selected.xml" value="0.361" />
+        <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/drawable/style_ed_entrada.xml" value="0.346" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/drawable/style_filtros.xml" value="0.361" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/drawable/style_spinner.xml" value="0.346" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/drawable/thumb_pers.xml" value="0.361" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/activity_qr.xml" value="0.55" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/activity_splash.xml" value="0.25" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/bottomsheet_filtros.xml" value="0.5" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/bottomsheet_filtros2.xml" value="0.55" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/dialog_enviado.xml" value="0.2971014492753623" />
-        <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/dialog_forgot_passw.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/dialog_login.xml" value="0.33" />
+        <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/dialog_forgot_passw.xml" value="0.5" />
+        <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/dialog_login.xml" value="0.5" />
+        <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/dialog_metodo_pago.xml" value="0.55" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/dialog_registro.xml" value="0.5" />
+        <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/evento.xml" value="0.55" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/filtros_menu.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/forgot_passw.xml" value="0.2971014492753623" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/fragment_dashboard.xml" value="0.2971014492753623" />
@@ -47,9 +52,11 @@
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/fragment_profile.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/item_evento.xml" value="0.55" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/item_evento2.xml" value="0.55" />
+        <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/item_nr_entradas.xml" value="0.55" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/login.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/menu_principal.xml" value="0.2971014492753623" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/pagina_principal.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/qr2.xml" value="0.55" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/spinner_item_custom.xml" value="0.55" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/spinner_item_txt.xml" value="0.55" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/menu/bottom_nav_menu.xml" value="0.36666666666666664" />

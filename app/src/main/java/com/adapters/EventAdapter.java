@@ -1,6 +1,8 @@
 package com.adapters;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,9 +14,12 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.activities.EventosActivity;
 import com.example.nft_ticket_andrey.R;
+import com.example.nft_ticket_andrey.ui.home.HomeFragment;
 import com.models.Eventos;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -49,7 +54,11 @@ public class EventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         eventHolder.imEvento.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(mContext.getApplicationContext(),"Detalles evento.." + eventHolder.txtTitulo.getText(),Toast.LENGTH_LONG).show();
+                //a donde lleva el evento
+                //Toast.makeText(mContext.getApplicationContext(),"Detalles evento.." + eventHolder.txtTitulo.getText(),Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(view.getContext(), EventosActivity.class); //nos lleva al evento
+                intent.putExtra("evento", events); //pasar objeto seleccionado
+                view.getContext().startActivity(intent);
             }
         });
     }
@@ -66,7 +75,8 @@ public class EventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imEvento;
-        TextView txtTitulo,txtPrecio;
+        TextView txtTitulo;
+        TextView txtPrecio;
 
 
         public ViewHolder(@NonNull View itemView) {
