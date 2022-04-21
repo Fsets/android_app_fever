@@ -1,39 +1,52 @@
 package com.activities;
 
+import android.Manifest;
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.icu.number.Precision;
+import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import com.dialogs.dialogFragmentLogin;
 import com.dialogs.dialogMetodoPago;
 import com.example.nft_ticket_andrey.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.libraries.places.api.Places;
+import com.google.android.libraries.places.api.net.PlacesClient;
 import com.models.Eventos;
 
 import org.json.JSONObject;
@@ -44,11 +57,12 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
+
 /**
  * Created by Cristian Mármol cristian.marmol@occamcomunicacion.com on 19/04/2022.
  */
-public class EventosActivity extends AppCompatActivity implements View.OnClickListener, Serializable, AdapterView.OnItemSelectedListener {
-    //declarar variables globales
+public class EventosActivity extends AppCompatActivity implements View.OnClickListener, Serializable, AdapterView.OnItemSelectedListener, OnMapReadyCallback  {
+    //declarar variables globale
     Calendar C = Calendar.getInstance();
     EditText edFechadesde, edFechaHasta;
     int contador = 1;
@@ -57,21 +71,33 @@ public class EventosActivity extends AppCompatActivity implements View.OnClickLi
     ImageButton imgClose, imBtMenosEntradas, imBtMasEntradas;
     TextView txtTituloEvento, txtFechaEvento, txtDuracionEvento, txtDescripcion, txtLeerMas, txtnrEntradas;
     LinearLayout layoutFondoEvento;
-    MapView mapView;
-    private GoogleMap map;
+
+    GoogleMap mapa;
 
     //para que funcione el spinner
     Spinner spinnerEntradas;
     ArrayAdapter<String> aaEntradas; //para añadir elementos al spinner
     String [] aEntradas = new String[] {"Selecciona una categoria", "Entrada 1", "Entrada 2", "Entrada 3", "Entrada 4"};
-    private Object Eventos;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.evento);
 
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
+
         getElements();
+    }
+
+    @Override
+    public void onMapReady(GoogleMap map) {
+        mapa = map;
+        LatLng fuenla = new LatLng(40.289165697435664, -3.7974519454817934);
+        mapa.addMarker(new MarkerOptions().position(fuenla).title("Marker"));
+        mapa.moveCamera(CameraUpdateFactory.newLatLngZoom(fuenla, 15.0f)); //hace zoom y mustra la zona que queremos
+
     }
 
     public void getElements(){

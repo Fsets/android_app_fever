@@ -37,4 +37,6 @@
     <string name="selecciona_un_metodo_de_pago">Selecciona un metodo de pago</string>
     <string name="coinbase_commerce">Coinbase Commerce</string>
     <string name="pagoMetamask">Para realizar el pago con Metamask, debes hacerlo desde la version web.</string>
+    <string name="como_llegar">Como llegar</string>
+    <string name="tipos_de_entrada">Tipos de entrada</string>
 </resources>
