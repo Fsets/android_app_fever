@@ -23,7 +23,7 @@
 
                 <ImageButton
                     android:id="@+id/imgBtCloseEvento"
-                    android:layout_width="12dp"
+                    android:layout_width="15dp"
                     android:layout_height="25dp"
                     android:layout_margin="10dp"
                     android:background="@android:color/transparent"

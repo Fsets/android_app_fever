@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 if (item.getItemId() == R.id.navigation_profile) {
+                    navController.navigate(R.id.navigation_profile);
                     showModalLoginDialog(); //lanza el dialogo de login
                 }
                 if (item.getItemId() == R.id.navigation_eventos) {
