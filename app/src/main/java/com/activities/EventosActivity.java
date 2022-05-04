@@ -62,7 +62,7 @@ import java.util.Locale;
  * Created by Cristian Mármol cristian.marmol@occamcomunicacion.com on 19/04/2022.
  */
 public class EventosActivity extends AppCompatActivity implements View.OnClickListener, Serializable, AdapterView.OnItemSelectedListener, OnMapReadyCallback  {
-    //declarar variables globale
+    //declarar variables globales
     Calendar C = Calendar.getInstance();
     EditText edFechadesde, edFechaHasta;
     int contador = 1;
@@ -97,12 +97,11 @@ public class EventosActivity extends AppCompatActivity implements View.OnClickLi
         LatLng fuenla = new LatLng(40.289165697435664, -3.7974519454817934);
         mapa.addMarker(new MarkerOptions().position(fuenla).title("Marker"));
         mapa.moveCamera(CameraUpdateFactory.newLatLngZoom(fuenla, 15.0f)); //hace zoom y mustra la zona que queremos
-
     }
 
     public void getElements(){
-        Intent i = getIntent(); //recoge el evento pasado de eventAdapter
-        Eventos ev = (Eventos) i.getSerializableExtra("evento"); //lo recoge y almacena en la variable
+        Bundle data = getIntent().getExtras();
+        Eventos ev = (Eventos) data.getParcelable("evento");
 
         layoutFondoEvento = findViewById(R.id.layoutFondoEvento);
         layoutFondoEvento.setBackgroundResource(ev.getImgEvento()); //cambia el fondo del evento
@@ -150,7 +149,7 @@ public class EventosActivity extends AppCompatActivity implements View.OnClickLi
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.imgBtCloseEvento:
-                finish();
+                onBackPressed(); //al pulsar atras vuelve al inicio
                 break;
             case R.id.btLeerMasEvento:
                 if(txtDescripcion.getMaxLines()<=2) {

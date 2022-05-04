@@ -3,11 +3,14 @@ package com.example.nft_ticket_andrey.ui.home;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
@@ -16,23 +19,29 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.activities.EventosRecientesActivity;
 import com.activities.QRActivity;
 import com.adapters.EventAdapter;
 import com.bottomsheet.FiltrosBottomSheet;
 import com.example.nft_ticket_andrey.R;
 import com.models.Eventos;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class HomeFragment extends Fragment implements View.OnClickListener{
+public class HomeFragment extends Fragment implements View.OnClickListener {
     private HomeViewModel homeViewModel;
     private ImageButton btn_filtros, btnEvento;
     private Button btn_todas, btn_cat1, btn_cat2;
     private Context mContext;
     private View root;
+    private TextView btn_eventos_recientes;
     private RecyclerView recyclerEvents, recylcerEventsCercanos;
     private ArrayList<Eventos> listEventos, listEventosCercanos;
     private RecyclerView.LayoutManager layoutManager, layoutManager2;
+    public static final String PRODUCT_KEY = "PRODUCT_KEY";
+
+    private HomeFragment listener;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -51,6 +60,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
 
         //btnEvento = root.findViewById(R.id.imEvento);
         //btnEvento.setOnClickListener(this);
+        btn_eventos_recientes = root.findViewById(R.id.btn_eventos_recientes);
+        btn_eventos_recientes.setOnClickListener(this);
 
         btn_todas = root.findViewById(R.id.btn_todas);
         btn_todas.setOnClickListener(this);
@@ -69,13 +80,16 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
     }
 
     public void getEvents(){
+        Bundle args = new Bundle();
+
         listEventos = new ArrayList<>();
-        listEventos.add(new Eventos("Titulo del Evento1", R.drawable.imgconcierto, 29.99, "domingo, abr 20, 2022", "13:00pm - 20:00pm", "descripcion 1"));
+        listEventos.add(new Eventos("Titulo del Evento 1 y otrs titulos aparteee de la aplicacion del movil", R.drawable.imgconcierto, 29.99, "domingo, abr 20, 2022", "13:00pm - 20:00pm", "descripcion 1"));
         listEventos.add(new Eventos("Titulo del Evento2", R.drawable.imgconcierto2, 39.99, "sabado, abr 19, 2022", "18:00pm - 00:00pm", getString(R.string.descripcion)));
         listEventos.add(new Eventos("Titulo del Evento3", R.drawable.imgmusica, 29.99, "lunes, may 13, 2022", "17:00pm - 22:00pm", "descripcion 3"));
         listEventos.add(new Eventos("Titulo del Evento4", R.drawable.imgorquestra, 39.99, "martes, may 25, 2022", "11:00am - 15:00pm", "descripcion 4"));
         listEventos.add(new Eventos("Titulo del Evento5", R.drawable.imgteatro, 29.99, "miercoles, jun 20, 2022", "10:00am - 17:00pm", "descripcion 5"));
         EventAdapter eventA= new EventAdapter(listEventos, getContext());
+
         recyclerEvents.setLayoutManager(layoutManager);
         recyclerEvents.setAdapter(eventA);
 
@@ -87,13 +101,14 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         recylcerEventsCercanos.setLayoutManager(layoutManager2);
         recylcerEventsCercanos.setAdapter(eventA2);
     }
+
     @Override
     public void onClick(View v) {
         Bundle args = new Bundle();
         switch (v.getId()) {
             case R.id.btn_filtros_home:
                 FiltrosBottomSheet bottomSheet = new FiltrosBottomSheet();
-                FragmentManager fragmentManager = getFragmentManager();
+                FragmentManager fragmentManager = getParentFragmentManager();
                 bottomSheet.setArguments(args);
                 bottomSheet.show(fragmentManager, "exampleBottomsheet");
                 break;
@@ -105,6 +120,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
             case R.id.btn_cat1:
                 Toast.makeText(getContext(),"categoria1", Toast.LENGTH_SHORT).show();
                 break;
+            case R.id.btn_eventos_recientes:
+                Intent i2 = new Intent(v.getContext(), EventosRecientesActivity.class);
+                i2.putParcelableArrayListExtra(PRODUCT_KEY, listEventos); //envia la lista parseada a eventosrecientesactivity
+                v.getContext().startActivity(i2);
         }
     }
 }

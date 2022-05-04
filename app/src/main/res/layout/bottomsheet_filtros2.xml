@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#012030">
+    android:background="@drawable/rounded_corner"
+    android:backgroundTint="#012030">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="359dp"
@@ -48,7 +49,7 @@
                     android:layout_marginTop="3dp"
                     android:layout_marginEnd="2dp"
                     android:background="@android:color/transparent"
-                    android:padding="4dp"
+                    android:padding="2dp"
                     android:scaleType="fitXY"
                     app:srcCompat="@drawable/close_popup" />
             </LinearLayout>
@@ -131,6 +132,8 @@
                     android:layout_height="wrap_content"
                     android:progressDrawable="@drawable/seekbar_personalizado"
                     android:thumb="@drawable/thumb_pers"
+                    android:background="@null"
+                    android:splitTrack="false"
                     android:maxHeight="14dp"/>
 
             </LinearLayout>
@@ -159,12 +162,11 @@
 
                 <EditText
                     android:id="@+id/ed_fechaDesde_filtros"
-                    android:layout_width="310dp"
+                    android:layout_width="320dp"
                     android:layout_height="30dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="12dp"
                     android:layout_marginRight="20dp"
-                    android:layout_weight="1"
                     android:focusable="false"
                     android:background="@drawable/style_spinner"
                     android:ems="10"
@@ -199,12 +201,11 @@
 
                 <EditText
                     android:id="@+id/ed_fechaHasta_filtros"
-                    android:layout_width="310dp"
+                    android:layout_width="320dp"
                     android:layout_height="30dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="12dp"
                     android:layout_marginRight="20dp"
-                    android:layout_weight="1"
                     android:background="@drawable/style_spinner"
                     android:ems="10"
                     android:focusable="false"
@@ -235,6 +236,8 @@
                     android:layout_marginTop="15dp"
                     android:background="@drawable/style_botones"
                     android:text="Aplicar"
+                    android:textStyle="bold"
+                    android:textAllCaps="false"
                     android:textColor="@color/white"
                     app:backgroundTint="@null" />
 
@@ -246,6 +249,8 @@
                     android:layout_marginTop="10dp"
                     android:background="@drawable/style_boton_restablecer"
                     android:text="Restablecer"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
                     android:textColor="#45c2ae"
                     app:backgroundTint="@null" />
             </LinearLayout>

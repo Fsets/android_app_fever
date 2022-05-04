@@ -2,5 +2,5 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="120dp"
-    android:background="@drawable/style_spinner"
+    android:background="@drawable/rounded_corner"
     android:orientation="horizontal"/>

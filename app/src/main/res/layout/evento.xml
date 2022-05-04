@@ -20,15 +20,16 @@
                 android:layout_height="190dp"
                 android:orientation="vertical"
                 android:background="@drawable/imgconcierto">
+
                 <ImageButton
-                    android:layout_margin="10dp"
                     android:id="@+id/imgBtCloseEvento"
-                    android:layout_width="15dp"
+                    android:layout_width="12dp"
                     android:layout_height="25dp"
-                    android:scaleType="fitXY"
+                    android:layout_margin="10dp"
                     android:background="@android:color/transparent"
-                    app:srcCompat="@drawable/return_arrow"
-                    android:contentDescription="TODO" />
+                    android:contentDescription="TODO"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/return_arrow" />
                 <TextView
                     android:id="@+id/txtTituloEvento"
                     android:layout_width="match_parent"
@@ -88,7 +89,6 @@
                     android:textSize="10dp"
                     android:textColor="#FF45C2AE"
                     android:text="Duracion del evento" />
-
             </LinearLayout>
 
             <LinearLayout
@@ -100,7 +100,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="10dp"
-                    android:layout_marginTop="25dp"
+                    android:layout_marginTop="15dp"
                     android:layout_marginLeft="20dp"
                     android:textColor="#a8abb0"
                     android:text="Descripcion" />
@@ -113,7 +113,7 @@
                     android:maxLines="2"
                     android:scrollHorizontally="true"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginRight="20dp"
                     android:text="@string/descripcion"
                     android:textColor="@color/white"
@@ -157,20 +157,25 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
+                android:layout_height="match_parent"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/style_spinner"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
-                <fragment
-                    android:id="@+id/map"
-                    android:name="com.google.android.gms.maps.SupportMapFragment"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:layout="@layout/map_custom"
-                    tools:context=".MapsActivity" />
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    app:cardCornerRadius="10dp">
+
+                    <fragment
+                        android:id="@+id/map"
+                        android:name="com.google.android.gms.maps.SupportMapFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"/>
+
+                </androidx.cardview.widget.CardView>
+
             </LinearLayout>
 
             <LinearLayout
@@ -181,7 +186,7 @@
                 <ImageView
                     android:id="@+id/imageView6"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="20dp"
                     android:layout_width="15dp"
                     android:layout_height="15dp"
                     android:scaleType="fitXY"
@@ -193,7 +198,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="10dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginLeft="5dp"
                     android:textColor="#a8abb0"
                     android:text="@string/tipos_de_entrada" />
@@ -260,7 +265,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:orientation="horizontal">
 
                 <EditText
                     android:id="@+id/ed_fechaDesde_evento"
@@ -321,6 +326,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -343,12 +349,11 @@
                     android:text="Selecciona tus entradas" />
             </LinearLayout>
 
-
             <LinearLayout
                 android:id="@+id/layoutEntradas"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:gravity="center"
                 android:orientation="horizontal">
                 <LinearLayout
@@ -411,6 +416,4 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

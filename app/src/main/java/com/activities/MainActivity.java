@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_eventos, R.id.navigation_musica, R.id.navigation_search, R.id.navigation_profile)
+                R.id.navigation_eventos, R.id.navigation_musica, R.id.navigation_search, R.id.navigation_profile, R.id.navigation_collections)
                 .build();
         navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         //NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
@@ -58,7 +58,10 @@ public class MainActivity extends AppCompatActivity {
                 if (item.getItemId() == R.id.navigation_search) {
                     //muestra el search
                     navController.navigate(R.id.navigation_search);
-                    Toast.makeText(getApplicationContext(),"search", Toast.LENGTH_SHORT).show();
+                }
+                if (item.getItemId() == R.id.navigation_collections) {
+                    //muestra el colleciones
+                    navController.navigate(R.id.navigation_collections);
                 }
                 return false;
             }

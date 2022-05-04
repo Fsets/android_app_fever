@@ -21,10 +21,15 @@
         android:id="@+id/navigation_search"
         android:name="com.example.nft_ticket_andrey.ui.notifications.NotificationsFragment"
         android:label="@string/title_search"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_search" />
     <fragment
         android:id="@+id/navigation_profile"
         android:name="com.example.nft_ticket_andrey.ui.perfil.ProfileFragment"
         android:label="@string/title_perfil"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/navigation_collections"
+        android:name="com.example.nft_ticket_andrey.ui.collections.navigation_collections"
+        android:label="Coleccion"
+        tools:layout="@layout/fragment_collections" />
 </navigation>

@@ -6,7 +6,7 @@
         android:endColor="@android:color/transparent"
         />
 
-    <corners android:radius="10dp" />
-    <stroke android:width="2px" android:color="#45c2ae" />
+    <corners android:radius="5dp" />
+    <stroke android:width="2px" android:color="#d5f2ec" />
 
 </shape>

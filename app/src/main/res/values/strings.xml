@@ -39,4 +39,7 @@
     <string name="pagoMetamask">Para realizar el pago con Metamask, debes hacerlo desde la version web.</string>
     <string name="como_llegar">Como llegar</string>
     <string name="tipos_de_entrada">Tipos de entrada</string>
+    <string name="escribe_tu_busqueda">Escribe tu busqueda</string>
+    <string name="cancelar2">Cancelar</string>
+    <string name="coleccion">Coleccion</string>
 </resources>
