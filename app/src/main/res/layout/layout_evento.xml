@@ -412,6 +412,8 @@
                     android:background="@drawable/style_botones"
                     android:text="Comprar ahora - precio"
                     android:textColor="@color/white"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
                     app:backgroundTint="@null" />
             </LinearLayout>
         </LinearLayout>

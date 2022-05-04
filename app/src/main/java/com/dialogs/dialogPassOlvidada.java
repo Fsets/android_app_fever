@@ -60,10 +60,8 @@ public class dialogPassOlvidada extends Dialog implements View.OnClickListener{
         switch (view.getId()){
             case R.id.bt_iniciar_sesion_forgotPassw:
                 //lanzar el intent de inicio
-                Toast.makeText(getContext(),"iniciando sesion..", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.bt_cancelar2_forgotPassw:
-                Toast.makeText(getContext(),"cerrando sesion..", Toast.LENGTH_SHORT).show();
                 dismiss(); //sale del dialog
                 break;
             case R.id.btnClosePassOlv:

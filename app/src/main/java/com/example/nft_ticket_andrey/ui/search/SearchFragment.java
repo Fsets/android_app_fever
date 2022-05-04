@@ -1,15 +1,11 @@
-package com.example.nft_ticket_andrey.ui.notifications;
+package com.example.nft_ticket_andrey.ui.search;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListAdapter;
-import android.widget.ListView;
 import android.widget.SearchView;
 
 import androidx.annotation.NonNull;
@@ -20,16 +16,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.adapters.listAdapter;
 
-import com.adapters.EventAdapter;
 import com.example.nft_ticket_andrey.R;
-import com.example.nft_ticket_andrey.ui.home.HomeFragment;
 import com.models.Eventos;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
-public class NotificationsFragment extends Fragment implements View.OnClickListener {
-    private NotificationsViewModel notificationsViewModel;
+public class SearchFragment extends Fragment implements View.OnClickListener {
+    private SearchViewModel notificationsViewModel;
     private View root;
     LinearLayout edBuscarEvento;
     Button btCancelar;
@@ -41,7 +34,7 @@ public class NotificationsFragment extends Fragment implements View.OnClickListe
     listAdapter listA;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        notificationsViewModel = new ViewModelProvider(this).get(NotificationsViewModel.class);
+        notificationsViewModel = new ViewModelProvider(this).get(SearchViewModel.class);
         root = inflater.inflate(R.layout.fragment_search, container, false);
 
         getElements(root);

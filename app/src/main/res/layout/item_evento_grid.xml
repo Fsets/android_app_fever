@@ -5,6 +5,7 @@
     android:layout_height="180dp"
     android:background="@drawable/evento_background"
     android:layout_marginBottom="10dp"
+    android:layout_marginRight="10dp"
     android:orientation="vertical">
 
         <androidx.cardview.widget.CardView

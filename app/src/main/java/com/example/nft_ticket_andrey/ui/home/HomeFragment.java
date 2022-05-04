@@ -122,7 +122,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.btn_eventos_recientes:
                 Intent i2 = new Intent(v.getContext(), EventosRecientesActivity.class);
-                i2.putParcelableArrayListExtra(PRODUCT_KEY, listEventos); //envia la lista parseada a eventosrecientesactivity
+                i2.putParcelableArrayListExtra("arraylistEventos", listEventos); //envia la lista parseada a eventosrecientesactivity
                 v.getContext().startActivity(i2);
         }
     }

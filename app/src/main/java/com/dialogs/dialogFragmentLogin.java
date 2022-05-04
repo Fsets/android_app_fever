@@ -70,20 +70,15 @@ public class dialogFragmentLogin extends Dialog implements View.OnClickListener 
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.bt_iniciar_sesion_login:
-                //lanzar el intent de inicio
-                Toast.makeText(getContext(),"iniciando sesion..", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.bt_cancelar_login:
-                Toast.makeText(getContext(),"cerrando sesion..", Toast.LENGTH_SHORT).show();
                 dismiss(); //sale del dialog
                 break;
             case R.id.btnCrearCuenta:
-                Toast.makeText(getContext(),"creando cuenta..", Toast.LENGTH_SHORT).show();
                 dismiss();
                 showdialogRegistro();//lanza el dialogo de registro
                 break;
             case R.id.btnPasswOlvidada:
-                Toast.makeText(getContext(),"Contraseña olvidada..", Toast.LENGTH_SHORT).show();
                 dismiss();
                 showdialogForgotPass();//lanza el dialogo de forgotPasw
                 break;

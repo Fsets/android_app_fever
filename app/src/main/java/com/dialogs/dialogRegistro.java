@@ -140,11 +140,9 @@ public class dialogRegistro extends Dialog implements View.OnClickListener{
                 }
                 break;
             case R.id.bt_cancelar_reg:
-                Toast.makeText(getContext(),"cerrando sesion..", Toast.LENGTH_SHORT).show();
                 dismiss(); //sale del dialog
                 break;
             case R.id.txt_inicia_reg:
-                Toast.makeText(getContext(),"creando cuenta..", Toast.LENGTH_SHORT).show();
                 dismiss();
                 showModalLoginDialog(); //lanza el dialogo de login
                 break;

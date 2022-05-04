@@ -49,12 +49,10 @@ public class MainActivity extends AppCompatActivity {
                 if (item.getItemId() == R.id.navigation_eventos) {
                     //muestra el eventos
                     navController.navigate(R.id.navigation_eventos);
-                    Toast.makeText(getApplicationContext(),"Eventos", Toast.LENGTH_SHORT).show();
                 }
                 if (item.getItemId() == R.id.navigation_musica) {
                     //muestra el musica
                     navController.navigate(R.id.navigation_musica);
-                    Toast.makeText(getApplicationContext(),"Musica", Toast.LENGTH_SHORT).show();
                 }
                 if (item.getItemId() == R.id.navigation_search) {
                     //muestra el search

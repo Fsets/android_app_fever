@@ -40,12 +40,14 @@
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/drawable/style_spinner_flecha.xml" value="0.3435" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/drawable/thumb_pers.xml" value="0.361" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout-v31/item_evento.xml" value="0.67" />
+        <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/activity_canciones_recientes.xml" value="0.55" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/activity_eventos_recientes.xml" value="0.55" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/activity_qr.xml" value="0.55" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/activity_splash.xml" value="0.25" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/bottomsheet_filtros.xml" value="0.5" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/bottomsheet_filtros2.xml" value="0.55" />
+        <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/canciones_layout.xml" value="0.55" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/dialog_enviado.xml" value="0.2971014492753623" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/dialog_forgot_passw.xml" value="0.5" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/dialog_login.xml" value="0.5" />
@@ -57,6 +59,7 @@
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/fragment_collections.xml" value="0.55" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/fragment_dashboard.xml" value="0.2971014492753623" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/fragment_home.xml" value="0.5" />
+        <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/fragment_musica.xml" value="0.5" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/fragment_notifications.xml" value="0.2971014492753623" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/fragment_profile.xml" value="0.5" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/fragment_search.xml" value="0.5" />
@@ -65,6 +68,8 @@
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/item_evento_grid.xml" value="0.55" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/item_evento_list.xml" value="0.55" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/item_nr_entradas.xml" value="0.55" />
+        <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/layout_canciones.xml" value="0.55" />
+        <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/layout_evento.xml" value="0.55" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/login.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/map_custom.xml" value="0.55" />
         <entry key="..\:/Users/EQUIPO1/nftticketandrey/app/src/main/res/layout/menu_principal.xml" value="0.2971014492753623" />

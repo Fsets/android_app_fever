@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#012030"
-    tools:context=".ui.notifications.NotificationsFragment">
+    tools:context=".ui.search.SearchFragment">
 
         <LinearLayout
             android:layout_width="match_parent"
