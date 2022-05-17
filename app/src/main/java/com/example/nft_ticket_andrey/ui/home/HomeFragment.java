@@ -114,8 +114,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.btn_todas:
                 Toast.makeText(getContext(),"todas categorias..", Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(v.getContext(), QRActivity.class);
-                v.getContext().startActivity(i);
                 break;
             case R.id.btn_cat1:
                 Toast.makeText(getContext(),"categoria1", Toast.LENGTH_SHORT).show();

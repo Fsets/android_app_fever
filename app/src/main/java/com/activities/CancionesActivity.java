@@ -1,5 +1,7 @@
 package com.activities;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,6 +11,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.dialogs.dialogMetodoPago;
 import com.example.nft_ticket_andrey.R;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.models.Cancion;
@@ -77,6 +80,22 @@ public class CancionesActivity extends AppCompatActivity implements View.OnClick
                     txtDescripcion.setMaxLines(2);
                 }
                 break;
+            case R.id.bt_comprarCancion:
+                showModalDialog(); //lanza el dialogo de metodos de pago
+                break;
         }
+    }
+
+    public void showModalDialog(){
+        Bundle args = new Bundle(); //PASAR DATOS DE UN ACTIVITY A OTRO
+        args.putDouble("totalEntradas", precio);
+        final dialogMetodoPago dialog = new dialogMetodoPago(args, CancionesActivity.this, R.layout.dialog_metodo_pago);
+        dialog.show();
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.setDialogResult(new dialogMetodoPago.OnMyDialogResult() {
+            @Override
+            public void fin(boolean fin) {
+            }
+        });
     }
 }

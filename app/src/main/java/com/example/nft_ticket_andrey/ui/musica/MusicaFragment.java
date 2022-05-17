@@ -21,6 +21,7 @@ import com.activities.CancionesRecientesActivity;
 import com.activities.EventosRecientesActivity;
 import com.activities.QRActivity;
 import com.adapters.CancionesAdapter;
+import com.adapters.ColeccionesAdapter;
 import com.adapters.EventAdapter;
 import com.bottomsheet.FiltrosBottomSheet;
 import com.example.nft_ticket_andrey.R;
@@ -90,7 +91,7 @@ public class MusicaFragment extends Fragment implements View.OnClickListener {
         listColecciones.add(new Cancion(R.drawable.img1, "Titulo del Evento 3 y otrs titulos aparteee de la aplicacion del movil", 6.99, "2020", getString(R.string.descripcion), "Kaze"));
         listColecciones.add(new Cancion(R.drawable.img4, "Titulo del Evento 4 y otrs titulos aparteee de la aplicacion del movil", 12.99, "2021", getString(R.string.descripcion), "Rauw Alejandro"));
         listColecciones.add(new Cancion(R.drawable.img2, "Titulo del Evento 5 y otrs titulos aparteee de la aplicacion del movil", 3.99, "2023", getString(R.string.descripcion), "Bad Bunny"));
-        CancionesAdapter songA2= new CancionesAdapter(listColecciones, getContext());
+        ColeccionesAdapter songA2= new ColeccionesAdapter(listColecciones, getContext());
         recylcerColecciones.setLayoutManager(layoutManager2);
         recylcerColecciones.setAdapter(songA2);
 
@@ -112,4 +113,5 @@ public class MusicaFragment extends Fragment implements View.OnClickListener {
                 break;
         }
     }
+    
 }
