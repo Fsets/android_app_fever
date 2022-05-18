@@ -29,7 +29,7 @@
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/navigation_collections"
-        android:name="com.example.nft_ticket_andrey.ui.collections.navigation_collections"
+        android:name="com.example.nft_ticket_andrey.ui.collections.CollectionsFragment"
         android:label="Coleccion"
         tools:layout="@layout/fragment_collections" />
 </navigation>

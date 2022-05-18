@@ -26,6 +26,7 @@ public class Eventos implements Parcelable {
 
     public Eventos(){
     }
+
     //getter and setter
     public String getTitulo() {
         return titulo;

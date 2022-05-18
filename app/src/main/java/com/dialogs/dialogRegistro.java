@@ -198,8 +198,8 @@ public class dialogRegistro extends Dialog implements View.OnClickListener{
                         jsonObject = new JSONObject(result);
                         int code = jsonObject.getInt("code");
                         if (code == 1000) {
-                            Toast.makeText(mContext, jsonObject.getString("success"), Toast.LENGTH_SHORT).show();
-                            dialogRegistro.this.dismiss();
+                            Toast.makeText(mContext, "success", Toast.LENGTH_SHORT).show();
+                            dismiss();
                         }else if(code == 1001){
                             Toast.makeText(mContext,"email ya registrado", Toast.LENGTH_SHORT).show();
                         } else {

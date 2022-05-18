@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,16 +14,15 @@ import com.example.nft_ticket_andrey.R;
 import com.models.Eventos;
 
 import java.util.ArrayList;
-import java.util.Locale;
 
 /**
  * Created by Cristian Mármol cristian.marmol@occamcomunicacion.com on 25/04/2022.
  */
-public class listAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class recyclerEntradasAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Context context;
     private ArrayList<Eventos> datos;
 
-    public listAdapter(ArrayList<Eventos> datos, Context mContext) {
+    public recyclerEntradasAdapter(ArrayList<Eventos> datos, Context mContext) {
         this.datos = datos;
         this.context = mContext;
     }
@@ -33,17 +31,18 @@ public class listAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        RecyclerView.ViewHolder viewHolder = new listAdapter.ViewHolder(inflater.inflate(R.layout.item_evento_list,parent,false));
+        RecyclerView.ViewHolder viewHolder = new recyclerEntradasAdapter.ViewHolder(inflater.inflate(R.layout.item_recycler_entradas,parent,false));
         return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        final Eventos events = datos.get(position);
-        final listAdapter.ViewHolder eventHolder = (listAdapter.ViewHolder) holder;
-        eventHolder.txtTitulo.setText(events.getTitulo());
-        eventHolder.txtPrecio.setText(String.valueOf(events.getPrecio()) + "€");
-        eventHolder.imEvento.setImageResource(events.getImgEvento());
+        final Eventos ev = datos.get(position);
+        final recyclerEntradasAdapter.ViewHolder songHolder = (recyclerEntradasAdapter.ViewHolder) holder;
+        songHolder.txtTitulo.setText(ev.getTitulo());
+        songHolder.txtTipo.setText("Sin Usar");
+        songHolder.imCancion.setImageResource(ev.getImgEvento());
+        songHolder.txtFecha.setText(ev.getFechaEvento());
     }
 
     @Override
@@ -52,15 +51,17 @@ public class listAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        ImageView imEvento;
+        ImageView imCancion;
         TextView txtTitulo;
-        TextView txtPrecio;
+        TextView txtTipo;
+        TextView txtFecha;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            imEvento = itemView.findViewById(R.id.imgEvento);
-            txtTitulo = itemView.findViewById(R.id.txtTituloSearch);
-            txtPrecio = itemView.findViewById(R.id.txtPrecioSearch);
+            imCancion = itemView.findViewById(R.id.imgEventoCanc);
+            txtTitulo = itemView.findViewById(R.id.txtTituloCanc);
+            txtTipo = itemView.findViewById(R.id.txtTipoanc);
+            txtFecha = itemView.findViewById(R.id.txtFechalist);
         }
     }
 

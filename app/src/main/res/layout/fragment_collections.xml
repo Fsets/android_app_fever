@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#012030"
-    tools:context=".ui.collections.navigation_collections">
+    tools:context=".ui.collections.CollectionsFragment">
 
 
     <LinearLayout
@@ -44,18 +44,18 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/button1"
+                    android:id="@+id/btEntradas"
                     android:layout_width="100dp"
                     android:layout_height="40dp"
                     android:layout_marginLeft="20dp"
-                    android:background="@drawable/style_bts_coleccion"
+                    android:background="@drawable/selector_bts_coleccion"
                     android:text="Entradas"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
                     app:backgroundTint="@null" />
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/btMusica"
                     android:layout_width="100dp"
                     android:layout_height="40dp"
                     android:layout_marginLeft="10dp"
@@ -65,7 +65,7 @@
                     android:textColor="@color/white"
                     app:backgroundTint="@null" />
                 <Button
-                    android:id="@+id/button3"
+                    android:id="@+id/btNFTs"
                     android:layout_width="100dp"
                     android:layout_height="40dp"
                     android:layout_marginLeft="10dp"
@@ -91,13 +91,14 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="20dp"
-            android:background="@drawable/style_ed_busqueda"
             android:orientation="horizontal">
 
             <SearchView
-                android:id="@+id/Sv_buscar_entradas"
+                android:id="@+id/sv_coleccion"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent"
+                android:background="@drawable/style_ed_busqueda"
+                android:queryHint="Buscar"/>
         </LinearLayout>
 
         <LinearLayout
@@ -110,9 +111,12 @@
             android:orientation="horizontal" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/listEntradas"
+            android:id="@+id/recyclerCollections"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="70dp"/>
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="13dp"
+            android:layout_marginBottom="60dp"/>
     </LinearLayout>
 </FrameLayout>

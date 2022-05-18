@@ -132,7 +132,7 @@ public class dialogFragmentLogin extends Dialog implements View.OnClickListener 
 
                             //iniciado sesion -> hacer cosas
                             Toast.makeText(getContext(), "Sesion Iniciada correctamente", Toast.LENGTH_SHORT).show();
-                            dialogFragmentLogin.this.dismiss();
+                            dismiss();
 
                         }else if(code == 1001){
                             Toast.makeText(getContext(), "Error al escribir el correo o la contraseña", Toast.LENGTH_SHORT).show();

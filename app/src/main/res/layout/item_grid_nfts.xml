@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="150dp"
+    android:layout_height="200dp"
+    android:background="@drawable/evento_background"
+    android:layout_marginBottom="10dp"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="125dp"
+        android:background="@drawable/rounded_corner">
+        <ImageButton
+            android:id="@+id/imNFT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner"
+            android:backgroundTint="@color/zxing_transparent"
+            android:scaleType="fitXY"
+            android:src="@drawable/recurso_9"/>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/txtTituloNFT"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:text="Cute Alien Riding UFO"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="12dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="bottom"
+        android:layout_marginBottom="10dp">
+
+        <LinearLayout
+            android:layout_width="80dp"
+            android:layout_height="23dp"
+            android:background="@drawable/style_nfts"
+            android:layout_marginLeft="5dp"
+            android:orientation="vertical">
+                <TextView
+                    android:id="@+id/txtTipoNft"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="3dp"
+                    android:text="Reclamado"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="11dp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imTipoNft"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:padding="4dp"
+            android:scaleType="fitCenter"
+            android:layout_marginLeft="27dp"
+            android:background="@drawable/style_background_tiponft"
+            app:srcCompat="@drawable/music_white" />
+    </LinearLayout>
+</LinearLayout>

@@ -2,10 +2,18 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- green state -->
     <item
+        android:state_pressed="true"
         android:drawable="@drawable/style_bts_coleccion"
-        android:state_focused="true"></item>
+        >
+    </item>
     <!-- green state -->
     <item
+        android:state_focused="true"
+        android:drawable="@drawable/style_bts_coleccion"
+        />
+    <item
+        android:state_focused="false"
         android:drawable="@drawable/style_bts_coleccion_noselected"
-        android:state_focused="false"></item>
+        >
+    </item>
 </selector>
