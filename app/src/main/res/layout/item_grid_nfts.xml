@@ -10,7 +10,8 @@
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="125dp"
-        android:background="@drawable/rounded_corner">
+
+        app:cardBackgroundColor="@color/zxing_transparent">
         <ImageButton
             android:id="@+id/imNFT"
             android:layout_width="wrap_content"

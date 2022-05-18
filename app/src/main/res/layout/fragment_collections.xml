@@ -91,14 +91,17 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="20dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            >
 
             <SearchView
                 android:id="@+id/sv_coleccion"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:focusable="true"
                 android:background="@drawable/style_ed_busqueda"
-                android:queryHint="Buscar"/>
+                android:queryHint="Buscar">
+            </SearchView>
         </LinearLayout>
 
         <LinearLayout

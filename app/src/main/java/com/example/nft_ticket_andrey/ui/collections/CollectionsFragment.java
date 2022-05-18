@@ -58,7 +58,6 @@ public class CollectionsFragment extends Fragment implements View.OnClickListene
 
     public void getElements(View root){
         btEntradas = root.findViewById(R.id.btEntradas);
-        btEntradas.setPressed(true);
         btEntradas.setOnClickListener(this);
 
         btMusica = root.findViewById(R.id.btMusica);
@@ -77,6 +76,9 @@ public class CollectionsFragment extends Fragment implements View.OnClickListene
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btEntradas:
+                if(!btEntradas.isPressed()){
+                    btEntradas.setPressed(true);
+                }
                 rellenarRecylcerEntradas();
                 SvColeccion.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
                     @Override
@@ -106,6 +108,17 @@ public class CollectionsFragment extends Fragment implements View.OnClickListene
                 break;
             case R.id.btNFTs:
                 rellenarGridNfts();
+                SvColeccion.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+                    @Override
+                    public boolean onQueryTextSubmit(String s) {
+                        return false;
+                    }
+                    @Override
+                    public boolean onQueryTextChange(String s) {
+                        filterNft(s);
+                        return false;
+                    }
+                });
                 break;
         }
     }
@@ -128,6 +141,16 @@ public class CollectionsFragment extends Fragment implements View.OnClickListene
             }
         }
         adapterMusica.filterList(filteredlist);
+    }
+
+    private void filterNft(String text) { //fitltra el texto en el recycler view
+        ArrayList<NFTs> filteredlist = new ArrayList<>();
+        for (NFTs item : listNFTs) {
+            if (item.getNombreNft().toLowerCase().contains(text.toLowerCase())) {
+                filteredlist.add(item);
+            }
+        }
+        adapterNFTs.filterList(filteredlist);
     }
 
     public void rellenarRecylcerEntradas(){

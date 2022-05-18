@@ -24,7 +24,9 @@
 
                 <SearchView
                     android:id="@+id/Sv_buscar_evento"
-                    android:layout_width="match_parent"
+                    android:focusable="true"
+                    android:layout_width="320dp"
+                    android:queryHint="Buscar"
                     android:layout_height="match_parent"/>
             </LinearLayout>
 

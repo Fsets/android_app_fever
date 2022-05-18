@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.activities.EventosActivity;
 import com.example.nft_ticket_andrey.R;
+import com.models.Cancion;
 import com.models.Eventos;
 import com.models.NFTs;
 
@@ -73,5 +74,11 @@ public class recyclerGridNFTsAdapter extends RecyclerView.Adapter<RecyclerView.V
             txtNombre = itemView.findViewById(R.id.txtTituloNFT);
             txtEstado = itemView.findViewById(R.id.txtTipoNft);
         }
+    }
+
+    // method for filtering our recyclerview items.
+    public void filterList(ArrayList<NFTs> filterllist) {
+        listNFTs = filterllist;
+        notifyDataSetChanged();
     }
 }
