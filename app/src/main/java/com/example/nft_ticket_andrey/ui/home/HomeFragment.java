@@ -3,8 +3,6 @@ package com.example.nft_ticket_andrey.ui.home;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,13 +18,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.activities.EventosRecientesActivity;
-import com.activities.QRActivity;
 import com.adapters.EventAdapter;
 import com.bottomsheet.FiltrosBottomSheet;
 import com.example.nft_ticket_andrey.R;
 import com.models.Eventos;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
@@ -83,20 +79,20 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         Bundle args = new Bundle();
 
         listEventos = new ArrayList<>();
-        listEventos.add(new Eventos("Titulo del Evento 1 y otrs titulos aparteee de la aplicacion del movil", R.drawable.imgconcierto, 29.99, "domingo, abr 20, 2022", "13:00pm - 20:00pm", "descripcion 1"));
-        listEventos.add(new Eventos("Titulo del Evento2", R.drawable.imgconcierto2, 39.99, "sabado, abr 19, 2022", "18:00pm - 00:00pm", getString(R.string.descripcion)));
-        listEventos.add(new Eventos("Titulo del Evento3", R.drawable.imgmusica, 29.99, "lunes, may 13, 2022", "17:00pm - 22:00pm", "descripcion 3"));
-        listEventos.add(new Eventos("Titulo del Evento4", R.drawable.imgorquestra, 39.99, "martes, may 25, 2022", "11:00am - 15:00pm", "descripcion 4"));
-        listEventos.add(new Eventos("Titulo del Evento5", R.drawable.imgteatro, 29.99, "miercoles, jun 20, 2022", "10:00am - 17:00pm", "descripcion 5"));
+        listEventos.add(new Eventos("Titulo del Evento 1 y otrs titulos aparteee de la aplicacion del movil", R.drawable.imgconcierto, 29.99, "domingo, abr 20, 2022", "13:00pm - 20:00pm", "descripcion 1", "usada"));
+        listEventos.add(new Eventos("Titulo del Evento2", R.drawable.imgconcierto2, 39.99, "sabado, abr 19, 2022", "18:00pm - 00:00pm", getString(R.string.descripcion), "usada"));
+        listEventos.add(new Eventos("Titulo del Evento3", R.drawable.imgmusica, 29.99, "lunes, may 13, 2022", "17:00pm - 22:00pm", "descripcion 3", "usada"));
+        listEventos.add(new Eventos("Titulo del Evento4", R.drawable.imgorquestra, 39.99, "martes, may 25, 2022", "11:00am - 15:00pm", "descripcion 4", "usada"));
+        listEventos.add(new Eventos("Titulo del Evento5", R.drawable.imgteatro, 29.99, "miercoles, jun 20, 2022", "10:00am - 17:00pm", "descripcion 5", "usada"));
         EventAdapter eventA= new EventAdapter(listEventos, getContext());
 
         recyclerEvents.setLayoutManager(layoutManager);
         recyclerEvents.setAdapter(eventA);
 
         listEventosCercanos = new ArrayList<>();
-        listEventosCercanos.add(new Eventos("Evento Cercano 1", R.drawable.imgconcierto2, 29.99, "domingo, jun 10, 2022", "19:00pm - 00:30pm", "descripcion 6"));
-        listEventosCercanos.add(new Eventos("Evento Cercano 2", R.drawable.imgmusica, 49.99, "jueves, jul 24, 2022", "17:30pm - 23:30pm", "descripcion 7"));
-        listEventosCercanos.add(new Eventos("Evento Cercano 3", R.drawable.imgteatro, 29.99, "viernes, abr 27, 2022", "14:00pm - 20:30pm", "descripcion 8"));
+        listEventosCercanos.add(new Eventos("Evento Cercano 1", R.drawable.imgconcierto2, 29.99, "domingo, jun 10, 2022", "19:00pm - 00:30pm", "descripcion 6", "usada"));
+        listEventosCercanos.add(new Eventos("Evento Cercano 2", R.drawable.imgmusica, 49.99, "jueves, jul 24, 2022", "17:30pm - 23:30pm", "descripcion 7", "usada"));
+        listEventosCercanos.add(new Eventos("Evento Cercano 3", R.drawable.imgteatro, 29.99, "viernes, abr 27, 2022", "14:00pm - 20:30pm", "descripcion 8", "usada"));
         EventAdapter eventA2= new EventAdapter(listEventosCercanos, getContext());
         recylcerEventsCercanos.setLayoutManager(layoutManager2);
         recylcerEventsCercanos.setAdapter(eventA2);

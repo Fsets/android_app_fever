@@ -3,8 +3,6 @@ package com.models;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.io.Serializable;
-
 /**
  * Created by Cristian Mármol cristian.marmol@occamcomunicacion.com on 07/04/2022.
  */
@@ -12,22 +10,31 @@ public class Eventos implements Parcelable {
     private int imgEvento;
     private String titulo;
     private double precio;
-    private String fechaEvento, duracion, descripcion;
+    private String fechaEvento, duracion, descripcion, estado;
 
     //constructor
-    public Eventos(String titulo, int imgEvento, double precio, String fechaEvento, String duracion, String descripcion) {
+    public Eventos(String titulo, int imgEvento, double precio, String fechaEvento, String duracion, String descripcion, String estado) {
         this.titulo = titulo;
         this.imgEvento = imgEvento;
         this.precio = precio;
         this.fechaEvento = fechaEvento;
         this.duracion = duracion;
         this.descripcion = descripcion;
+        this.estado = estado;
     }
 
     public Eventos(){
     }
 
     //getter and setter
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
     public String getTitulo() {
         return titulo;
     }
@@ -90,6 +97,7 @@ public class Eventos implements Parcelable {
         dest.writeString(this.fechaEvento);
         dest.writeString(this.duracion);
         dest.writeString(this.descripcion);
+        dest.writeString(this.estado);
     }
 
     public void readFromParcel(Parcel source) {
@@ -99,6 +107,7 @@ public class Eventos implements Parcelable {
         this.fechaEvento = source.readString();
         this.duracion = source.readString();
         this.descripcion = source.readString();
+        this.estado = source.readString();
     }
 
     protected Eventos(Parcel in) {
@@ -108,6 +117,7 @@ public class Eventos implements Parcelable {
         this.fechaEvento = in.readString();
         this.duracion = in.readString();
         this.descripcion = in.readString();
+        this.estado = in.readString();
     }
 
     public static final Parcelable.Creator<Eventos> CREATOR = new Parcelable.Creator<Eventos>() {

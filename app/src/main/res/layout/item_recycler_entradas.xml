@@ -50,6 +50,7 @@
 
 
                 <LinearLayout
+                    android:id="@+id/fondoTipoEntrada"
                     android:layout_width="80dp"
                     android:layout_height="25dp"
                     android:layout_gravity="right"
@@ -57,7 +58,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/txtTipoanc"
+                        android:id="@+id/txtTipoEnt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Sin Usar"

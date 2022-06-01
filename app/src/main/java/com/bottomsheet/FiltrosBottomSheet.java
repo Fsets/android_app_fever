@@ -188,7 +188,7 @@ public class FiltrosBottomSheet extends BottomSheetDialogFragment implements Vie
             //hace un llamado a la perilla cuando se arrastra
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                txtCargarPrecio.setText(String.valueOf(i) + " %");
+                txtCargarPrecio.setText(String.valueOf(i) + " €");
             }
             //hace un llamado  cuando se toca la perilla
             @Override

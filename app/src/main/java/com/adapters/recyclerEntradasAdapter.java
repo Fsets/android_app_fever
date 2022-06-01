@@ -1,10 +1,12 @@
 package com.adapters;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -40,9 +42,15 @@ public class recyclerEntradasAdapter extends RecyclerView.Adapter<RecyclerView.V
         final Eventos ev = datos.get(position);
         final recyclerEntradasAdapter.ViewHolder songHolder = (recyclerEntradasAdapter.ViewHolder) holder;
         songHolder.txtTitulo.setText(ev.getTitulo());
-        songHolder.txtTipo.setText("Sin Usar");
+        songHolder.txtTipo.setText(ev.getEstado());
         songHolder.imCancion.setImageResource(ev.getImgEvento());
         songHolder.txtFecha.setText(ev.getFechaEvento());
+        if (songHolder.txtTipo.getText() == "sin usar") {
+            songHolder.fondo.setBackgroundResource(R.drawable.style_entradas);
+        }else {
+            songHolder.fondo.setBackgroundResource(R.drawable.style_entradas_usadas);
+            songHolder.txtTipo.setTextColor(Color.parseColor("#f54e60"));
+        }
     }
 
     @Override
@@ -51,6 +59,7 @@ public class recyclerEntradasAdapter extends RecyclerView.Adapter<RecyclerView.V
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+        LinearLayout fondo;
         ImageView imCancion;
         TextView txtTitulo;
         TextView txtTipo;
@@ -60,8 +69,9 @@ public class recyclerEntradasAdapter extends RecyclerView.Adapter<RecyclerView.V
             super(itemView);
             imCancion = itemView.findViewById(R.id.imgEventoCanc);
             txtTitulo = itemView.findViewById(R.id.txtTituloCanc);
-            txtTipo = itemView.findViewById(R.id.txtTipoanc);
+            txtTipo = itemView.findViewById(R.id.txtTipoEnt);
             txtFecha = itemView.findViewById(R.id.txtFechalist);
+            fondo = itemView.findViewById(R.id.fondoTipoEntrada);
         }
     }
 

@@ -15,7 +15,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.SearchView;
 
-import com.adapters.CancionesGridAdapter;
 import com.adapters.recyclerEntradasAdapter;
 import com.adapters.recyclerGridNFTsAdapter;
 import com.adapters.recyclerMusicaAdapter;
@@ -156,14 +155,13 @@ public class CollectionsFragment extends Fragment implements View.OnClickListene
     public void rellenarRecylcerEntradas(){
         layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL,false);
         listEventos = new ArrayList<>();
-        listEventos.add(new Eventos("Dos notas", R.drawable.imgconcierto, 29.99, "domingo, abr 20, 2022", "13:00pm - 20:00pm", "descripcion 1"));
-        listEventos.add(new Eventos("Fondo Flamenco", R.drawable.imgteatro, 39.99, "miercoles, jun 20, 2022", "10:00am - 17:00pm", "descripcion 5"));
-        listEventos.add(new Eventos("Alice Cooper", R.drawable.img5, 29.99, "domingo, abr 20, 2022", "13:00pm - 20:00pm", "descripcion 1"));
-        listEventos.add(new Eventos("White Lies", R.drawable.imgmusica, 29.99, "lunes, may 13, 2022", "17:00pm - 22:00pm", "descripcion 3"));
-        listEventos.add(new Eventos("Harry Styles", R.drawable.imgorquestra, 39.99, "martes, may 25, 2022", "11:00am - 15:00pm", "descripcion 4"));
-        listEventos.add(new Eventos("Prince Royce - Noches del Botánico 2022", R.drawable.img3, 29.99, "miercoles, jun 20, 2022", "10:00am - 17:00pm", "descripcion 5"));
-        listEventos.add(new Eventos("Pablo Alborán - Noches del Botánico 2022", R.drawable.img4, 29.99, "domingo, abr 20, 2022", "13:00pm - 20:00pm", "descripcion 1"));
-        listEventos.add(new Eventos("Madrid Puro Reggaeton Festival", R.drawable.img2, 39.99, "miercoles, jun 20, 2022", "10:00am - 17:00pm", "descripcion 5"));
+        listEventos.add(new Eventos("Dos notas", R.drawable.imgconcierto, 29.99, "domingo, abr 20, 2022", "13:00pm - 20:00pm", "descripcion 1", "sin usar"));
+        listEventos.add(new Eventos("Alice Cooper", R.drawable.img5, 29.99, "domingo, abr 20, 2022", "13:00pm - 20:00pm", "descripcion 1", "sin usar"));
+        listEventos.add(new Eventos("White Lies", R.drawable.imgmusica, 29.99, "lunes, may 13, 2022", "17:00pm - 22:00pm", "descripcion 3", "usada"));
+        listEventos.add(new Eventos("Harry Styles", R.drawable.imgorquestra, 39.99, "martes, may 25, 2022", "11:00am - 15:00pm", "descripcion 4", "sin usar"));
+        listEventos.add(new Eventos("Prince Royce - Noches del Botánico 2022", R.drawable.img3, 29.99, "miercoles, jun 20, 2022", "10:00am - 17:00pm", "descripcion 5", "usada"));
+        listEventos.add(new Eventos("Pablo Alborán - Noches del Botánico 2022", R.drawable.img4, 29.99, "domingo, abr 20, 2022", "13:00pm - 20:00pm", "descripcion 1", "usada"));
+        listEventos.add(new Eventos("Madrid Puro Reggaeton Festival", R.drawable.img2, 39.99, "miercoles, jun 20, 2022", "10:00am - 17:00pm", "descripcion 5", "sin usar"));
         adapterEntradas= new recyclerEntradasAdapter(listEventos, getContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapterEntradas);

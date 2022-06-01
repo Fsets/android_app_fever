@@ -54,14 +54,14 @@ public class SearchFragment extends Fragment implements View.OnClickListener {
 
         listEventos2 = new ArrayList<>();
 
-        listEventos2.add(new Eventos("Viaje al fin de la noche", R.drawable.imgconcierto, 29.99, "domingo, abr 20, 2022", "13:00pm - 20:00pm", "descripcion 1"));
-        listEventos2.add(new Eventos("Decamerón", R.drawable.imgteatro, 39.99, "miercoles, jun 20, 2022", "10:00am - 17:00pm", "descripcion 5"));
-        listEventos2.add(new Eventos("Cumbres Borrascosas", R.drawable.img5, 29.99, "domingo, abr 20, 2022", "13:00pm - 20:00pm", "descripcion 1"));
-        listEventos2.add(new Eventos("Gente independiente", R.drawable.imgmusica, 29.99, "lunes, may 13, 2022", "17:00pm - 22:00pm", "descripcion 3"));
-        listEventos2.add(new Eventos("Casa de muñecas", R.drawable.imgorquestra, 39.99, "martes, may 25, 2022", "11:00am - 15:00pm", "descripcion 4"));
-        listEventos2.add(new Eventos("Vida y opiniones del caballero Tristram Shandy", R.drawable.img3, 29.99, "miercoles, jun 20, 2022", "10:00am - 17:00pm", "descripcion 5"));
-        listEventos2.add(new Eventos("Guerra y paz", R.drawable.img4, 29.99, "domingo, abr 20, 2022", "13:00pm - 20:00pm", "descripcion 1"));
-        listEventos2.add(new Eventos("Memorias de Adriano", R.drawable.img2, 39.99, "miercoles, jun 20, 2022", "10:00am - 17:00pm", "descripcion 5"));
+        listEventos2.add(new Eventos("Viaje al fin de la noche", R.drawable.imgconcierto, 29.99, "domingo, abr 20, 2022", "13:00pm - 20:00pm", "descripcion 1", "usada"));
+        listEventos2.add(new Eventos("Decamerón", R.drawable.imgteatro, 39.99, "miercoles, jun 20, 2022", "10:00am - 17:00pm", "descripcion 5", "usada"));
+        listEventos2.add(new Eventos("Cumbres Borrascosas", R.drawable.img5, 29.99, "domingo, abr 20, 2022", "13:00pm - 20:00pm", "descripcion 1", "usada"));
+        listEventos2.add(new Eventos("Gente independiente", R.drawable.imgmusica, 29.99, "lunes, may 13, 2022", "17:00pm - 22:00pm", "descripcion 3", "usada"));
+        listEventos2.add(new Eventos("Casa de muñecas", R.drawable.imgorquestra, 39.99, "martes, may 25, 2022", "11:00am - 15:00pm", "descripcion 4", "usada"));
+        listEventos2.add(new Eventos("Vida y opiniones del caballero Tristram Shandy", R.drawable.img3, 29.99, "miercoles, jun 20, 2022", "10:00am - 17:00pm", "descripcion 5", "usada"));
+        listEventos2.add(new Eventos("Guerra y paz", R.drawable.img4, 29.99, "domingo, abr 20, 2022", "13:00pm - 20:00pm", "descripcion 1", "usada"));
+        listEventos2.add(new Eventos("Memorias de Adriano", R.drawable.img2, 39.99, "miercoles, jun 20, 2022", "10:00am - 17:00pm", "descripcion 5", "usada"));
 
         listA= new listAdapter(listEventos2, getContext());
 
