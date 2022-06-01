@@ -77,7 +77,7 @@ public class CancionesRecientesActivity extends AppCompatActivity implements Vie
     public void onClick(View view) {
         Bundle args = new Bundle();
         switch (view.getId()) {
-            case R.id.imbt_filtros_recentSongs:
+            case R.id.imbt_filtros_recentSongs: //al pulsar el boton se abre el bottom sheet
                 FiltrosBottomSheet bottomSheet = new FiltrosBottomSheet();
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 bottomSheet.setArguments(args);

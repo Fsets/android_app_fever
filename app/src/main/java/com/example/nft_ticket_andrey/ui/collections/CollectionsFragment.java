@@ -66,7 +66,8 @@ public class CollectionsFragment extends Fragment implements View.OnClickListene
         btNFTs.setOnClickListener(this);
 
         recyclerView = root.findViewById(R.id.recyclerCollections);
-
+        btEntradas.setBackgroundResource(R.drawable.style_bts_coleccion);
+        rellenarRecylcerEntradas();
         SvColeccion = root.findViewById(R.id.sv_coleccion);
 
     }
@@ -75,9 +76,9 @@ public class CollectionsFragment extends Fragment implements View.OnClickListene
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btEntradas:
-                if(!btEntradas.isPressed()){
-                    btEntradas.setPressed(true);
-                }
+                btEntradas.setBackgroundResource(R.drawable.style_bts_coleccion);
+                btMusica.setBackgroundResource(R.drawable.style_bts_coleccion_noselected);
+                btNFTs.setBackgroundResource(R.drawable.style_bts_coleccion_noselected);
                 rellenarRecylcerEntradas();
                 SvColeccion.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
                     @Override
@@ -92,6 +93,9 @@ public class CollectionsFragment extends Fragment implements View.OnClickListene
                 });
                 break;
             case R.id.btMusica:
+                btEntradas.setBackgroundResource(R.drawable.style_bts_coleccion_noselected);
+                btMusica.setBackgroundResource(R.drawable.style_bts_coleccion);
+                btNFTs.setBackgroundResource(R.drawable.style_bts_coleccion_noselected);
                 rellenarRecyclerMusica();
                 SvColeccion.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
                     @Override
@@ -106,6 +110,9 @@ public class CollectionsFragment extends Fragment implements View.OnClickListene
                 });
                 break;
             case R.id.btNFTs:
+                btEntradas.setBackgroundResource(R.drawable.style_bts_coleccion_noselected);
+                btMusica.setBackgroundResource(R.drawable.style_bts_coleccion_noselected);
+                btNFTs.setBackgroundResource(R.drawable.style_bts_coleccion);
                 rellenarGridNfts();
                 SvColeccion.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
                     @Override

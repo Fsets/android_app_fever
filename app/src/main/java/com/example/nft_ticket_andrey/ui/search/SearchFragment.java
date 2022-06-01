@@ -62,7 +62,8 @@ public class SearchFragment extends Fragment implements View.OnClickListener {
         listEventos2.add(new Eventos("Vida y opiniones del caballero Tristram Shandy", R.drawable.img3, 29.99, "miercoles, jun 20, 2022", "10:00am - 17:00pm", "descripcion 5", "usada"));
         listEventos2.add(new Eventos("Guerra y paz", R.drawable.img4, 29.99, "domingo, abr 20, 2022", "13:00pm - 20:00pm", "descripcion 1", "usada"));
         listEventos2.add(new Eventos("Memorias de Adriano", R.drawable.img2, 39.99, "miercoles, jun 20, 2022", "10:00am - 17:00pm", "descripcion 5", "usada"));
-
+        //listeventos2.add(new Eventos("asdsdjdlflpekfdkf", R.drawable.imgendefecto, 65.56, "sabado, abr 13, 2023", "11:15am - 18:45pm", "descripcion ldjfeuikahjs jdjdjfebjebf ekjhskjkjjdfh kjernfjrhrjeuhf ijrwejr", "sin usar" ));
+        //listEventos2.add(new Eventos());
         listA= new listAdapter(listEventos2, getContext());
 
         listaEventos.setLayoutManager(layoutManager);

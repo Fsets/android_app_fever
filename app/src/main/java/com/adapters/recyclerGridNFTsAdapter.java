@@ -48,7 +48,6 @@ public class recyclerGridNFTsAdapter extends RecyclerView.Adapter<RecyclerView.V
         nftHolder.txtNombre.setText(nfts.getNombreNft());
         nftHolder.txtEstado.setText(nfts.getEstado());
         nftHolder.imTipo.setImageResource(nfts.getImgTipo());
-
         nftHolder.imNft.setImageResource(nfts.getImgNFT());
     }
 

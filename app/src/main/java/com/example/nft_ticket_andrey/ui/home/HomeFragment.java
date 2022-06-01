@@ -85,7 +85,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         listEventos.add(new Eventos("Titulo del Evento4", R.drawable.imgorquestra, 39.99, "martes, may 25, 2022", "11:00am - 15:00pm", "descripcion 4", "usada"));
         listEventos.add(new Eventos("Titulo del Evento5", R.drawable.imgteatro, 29.99, "miercoles, jun 20, 2022", "10:00am - 17:00pm", "descripcion 5", "usada"));
         EventAdapter eventA= new EventAdapter(listEventos, getContext());
-
         recyclerEvents.setLayoutManager(layoutManager);
         recyclerEvents.setAdapter(eventA);
 
@@ -117,7 +116,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             case R.id.btn_eventos_recientes:
                 Intent i2 = new Intent(v.getContext(), EventosRecientesActivity.class);
                 i2.putParcelableArrayListExtra("arraylistEventos", listEventos); //envia la lista parseada a eventosrecientesactivity
-                v.getContext().startActivity(i2);
+                v.getContext().startActivity(i2); // inicia la vista
         }
     }
 }

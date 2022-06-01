@@ -87,7 +87,7 @@ public class FiltrosBottomSheet extends BottomSheetDialogFragment implements Vie
 
     @SuppressLint("ResourceType")
     public void getElements(View contentView){ //recogemos los elementos q vamos a utilizar
-        btnCloseFiltros = contentView.findViewById(R.id.btn_closeFiltros2);
+        btnCloseFiltros = contentView.findViewById(R.id.btn_closeFiltros2);//
         btnCloseFiltros.setOnClickListener(this);
 
         spinnerCategorias = contentView.findViewById(R.id.spinnerCategorias2);
@@ -96,7 +96,6 @@ public class FiltrosBottomSheet extends BottomSheetDialogFragment implements Vie
         aaCategorias.setDropDownViewResource(R.layout.spinner_item_txt); //al pulsar el spinner sale la lista personalizada
         spinnerCategorias.setAdapter(aaCategorias);
         spinnerCategorias.setSelection(0); //selecciona el default
-
 
         edFechadesde = contentView.findViewById(R.id.ed_fechaDesde_filtros);
         edFechadesde.setOnClickListener(this);
@@ -119,8 +118,10 @@ public class FiltrosBottomSheet extends BottomSheetDialogFragment implements Vie
     private void reestablecer(){
         spinnerCategorias.setSelection(0); //selecciona el default
         seekBarFiltros.setProgress(0);
+
         edFechaHasta.setText(String.valueOf("dd/mm/aaaa"));
         edFechadesde.setText(String.valueOf("dd/mm/aaaa"));
+
     }
     @Override
     public void onClick(View v) {
@@ -130,7 +131,7 @@ public class FiltrosBottomSheet extends BottomSheetDialogFragment implements Vie
                 break;
 
             case R.id.bt_aplicarFiltros2:
-                Toast.makeText(getContext(),"Aplicando Filtros..", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(),"Aplicando Filtros..", Toast.LENGTH_SHORT).show(); //recoger toda la lista y filtrarla segun los datos seleccionados
                 dismiss();
                 break;
 
@@ -138,9 +139,11 @@ public class FiltrosBottomSheet extends BottomSheetDialogFragment implements Vie
                 reestablecer();
                 Toast.makeText(getContext(),"Reestableciendo Filtros..", Toast.LENGTH_SHORT).show();
                 break;
+
             case R.id.ed_fechaDesde_filtros:
                 new DatePickerDialog(getContext(), dateD, C.get(Calendar.YEAR), C.get(Calendar.MONTH), C.get(Calendar.DAY_OF_MONTH)).show();
                 break;
+
             case R.id.ed_fechaHasta_filtros:
                 new DatePickerDialog(getContext(),dateH, C.get(Calendar.YEAR), C.get(Calendar.MONTH), C.get(Calendar.DAY_OF_MONTH)).show();
                 break;

@@ -70,7 +70,7 @@ public class EventosActivity extends AppCompatActivity implements View.OnClickLi
     public void onMapReady(GoogleMap map) {
         mapa = map;
         LatLng fuenla = new LatLng(40.289165697435664, -3.7974519454817934);
-        mapa.addMarker(new MarkerOptions().position(fuenla).title("Marker"));
+        mapa.addMarker(new MarkerOptions().position(fuenla).title("Marker")); //añade el marcador
         mapa.moveCamera(CameraUpdateFactory.newLatLngZoom(fuenla, 15.0f)); //hace zoom y mustra la zona que queremos
     }
 
@@ -135,7 +135,7 @@ public class EventosActivity extends AppCompatActivity implements View.OnClickLi
                     txtDescripcion.setMaxLines(2);
                 }
                 break;
-            case R.id.ed_fechaDesde_evento:
+            case R.id.ed_fechaDesde_evento: // recoge la fecha seleccionada
                 new DatePickerDialog(this, dateD, C.get(Calendar.YEAR), C.get(Calendar.MONTH), C.get(Calendar.DAY_OF_MONTH)).show();
                 break;
             case R.id.ed_fechaHasta_evento:
@@ -149,7 +149,7 @@ public class EventosActivity extends AppCompatActivity implements View.OnClickLi
                 txtnrEntradas.setText(contador + " Entradas");
                 break;
             case R.id.imbtMenosEntradas:
-                if(contador > 0) {
+                if(contador > 0) { //si el contador es > 0 entonces calcula el precio de las entradas
                     contador--;
                     precio = contador * precioI;
                     DecimalFormat df2 = new DecimalFormat("#.##");
@@ -167,7 +167,7 @@ public class EventosActivity extends AppCompatActivity implements View.OnClickLi
 
     public void showModalDialog(){
         Bundle args = new Bundle(); //PASAR DATOS DE UN ACTIVITY A OTRO
-        args.putDouble("totalEntradas", precio);
+        args.putDouble("totalEntradas", precio); //pasa el precio total para comprar
         final dialogMetodoPago dialog = new dialogMetodoPago(args, EventosActivity.this, R.layout.dialog_metodo_pago);
         dialog.show();
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));

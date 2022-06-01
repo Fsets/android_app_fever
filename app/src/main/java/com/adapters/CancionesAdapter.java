@@ -41,7 +41,7 @@ public class CancionesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        final Cancion canciones = listCanciones.get(position);
+        final Cancion canciones = listCanciones.get(position); //coge el id del objeto q queremos
         final CancionesAdapter.ViewHolder songHolder = (CancionesAdapter.ViewHolder) holder;
         songHolder.txtTitulo.setText(canciones.getTitulo());
         songHolder.txtPrecio.setText(String.valueOf(canciones.getPrecio()) + "€");

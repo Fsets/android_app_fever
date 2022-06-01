@@ -152,7 +152,7 @@ public class dialogFragmentLogin extends Dialog implements View.OnClickListener 
             });
         }
     }
-
+//holii bb que taal vas
     @Override
     public void onClick(View view) {
         switch (view.getId()){

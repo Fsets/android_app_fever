@@ -77,7 +77,8 @@ public class dialogRegistro extends Dialog implements View.OnClickListener{
         setContentView(R.layout.dialog_registro); //visualiza el dialogo que queremos sacar
         loadElements();
     }
-
+//
+    //
     public void loadElements(){
         edEmail = findViewById(R.id.ed_email_reg);
         edConfirmPassword = findViewById((R.id.ed_rep_password_reg));
